@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_relogio/widgets/clock_widget.dart';
 
 class ClockScreen extends StatelessWidget {
   const ClockScreen({super.key});
@@ -6,9 +7,16 @@ class ClockScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-        'Relógio',
-        style: TextStyle(fontSize: 24),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ClockWidget(),
+          SizedBox(height: 20),
+          Text(
+            'Relógio',
+            style: TextStyle(fontSize: 24),
+          ),
+        ],
       ),
     );
   }

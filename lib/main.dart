@@ -3,10 +3,17 @@ import 'package:meu_relogio/screens/alarm_screen.dart';
 import 'package:meu_relogio/screens/clock_screen.dart';
 import 'package:meu_relogio/screens/stopwatch_screen.dart';
 import 'package:meu_relogio/screens/timer_screen.dart';
+import 'package:meu_relogio/services/time_service.dart';
 import 'package:meu_relogio/widgets/bottom_nav.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => TimeService()..start(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

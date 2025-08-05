@@ -3,6 +3,10 @@
         android:label="meu_relogio"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <service
+          android:name="androidx.work.impl.foreground.SystemForegroundService"
+          android:foregroundServiceType="dataSync"
+          android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
